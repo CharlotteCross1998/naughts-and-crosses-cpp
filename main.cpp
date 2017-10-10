@@ -1,3 +1,8 @@
+/*
+
+	Designed for 3x3 in mind, however the game has been made as scalable as possible.
+	Source code by Brad Cross http://www.github.com/bradcross1998 distributed for free.
+*/
 #include <iostream>
 #include <limits> //for clearing cin
 
@@ -43,6 +48,13 @@ void CNaughts::SetValue(int x, int y, int player)
 
 void CNaughts::Display() //display the board
 {
+	/*optional - Show grid numbers IE
+	
+		0 1 2
+	0	x y x
+	1   y x y
+	2   x y x
+	*/
 	for (int x = 0; x < GRID_SIZE_X; x++)
 	{
 		for (int y = 0; y < GRID_SIZE_Y; y++)
@@ -95,6 +107,20 @@ void CNaughts::CheckGame()
 				if(grid[y][0] == 1) winner = 1;
 				else winner = 2;
 			}
+	}
+	//diagonal winners
+	if (grid[1][1] != 0) //if the middle doesn't = 0
+	{
+		if(grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2])
+		{
+			state = 2;
+			winner = grid[1][1];
+		}		
+		if(grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0])
+		{
+			state = 2;
+			winner = grid[1][1];
+		}
 	}
 	//End check for winner
 	//Check for no moves left
