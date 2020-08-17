@@ -1,4 +1,4 @@
 language: cpp
 compiler: gcc
 install: true
-script: make 
+script: make travis
