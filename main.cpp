@@ -1,7 +1,7 @@
 /*
 
 	Designed for 3x3 in mind, however the game has been made as scalable as possible.
-	Source code by Brad Cross http://www.github.com/bradcross1998 distributed for free.
+	Source code by Charlotte Cross http://www.github.com/charlottecross1998 distributed for free.
 */
 #include <iostream>
 #include <limits> //for clearing cin
